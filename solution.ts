@@ -75,4 +75,15 @@ const printBookDetails = (book: Book) => {
   );
 };
 
+type ValuesType = number | string;
+
+const getUniqueValues = (
+  array1: ValuesType[],
+  array2: ValuesType[]
+): ValuesType[] => {
+  const uniqueSet = new Set([...array1, ...array2]);
+
+  const uniqueValue: ValuesType[] = Array.from(uniqueSet);
+  return uniqueValue;
+};
 
