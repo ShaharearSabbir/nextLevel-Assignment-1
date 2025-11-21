@@ -22,3 +22,16 @@ const getLength = (input: string | unknown[]): number | undefined => {
   }
 };
 
+class Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails() {
+    const toReturn: string = `'Name: ${this.name}, Age: ${this.age}'`;
+    return toReturn;
+  }
+}
