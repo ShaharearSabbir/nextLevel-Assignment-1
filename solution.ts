@@ -87,3 +87,29 @@ const getUniqueValues = (
   return uniqueValue;
 };
 
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+
+const calculateTotalPrice = (products: Product[]): number => {
+  if (products.length === 0) {
+    return 0;
+  }
+
+  const payable = products.reduce((payable, product) => {
+    const totalWithoutDiscount = product.price * product.quantity;
+    const discount = product.discount
+      ? (totalWithoutDiscount / 100) * product.discount
+      : 0;
+
+    payable = payable + totalWithoutDiscount - discount;
+    return payable;
+  }, 0);
+
+  return payable;
+};
+
+
