@@ -35,3 +35,15 @@ class Person {
     return toReturn;
   }
 }
+
+interface Book {
+  title: string;
+  rating: number;
+}
+
+const filterByRating = (books: Book[]): Book[] => {
+  const filteredBooks = books.filter((book) => book.rating >= 4);
+
+  return filteredBooks;
+};
+
