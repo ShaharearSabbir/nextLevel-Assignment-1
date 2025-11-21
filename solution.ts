@@ -42,8 +42,20 @@ interface Book {
 }
 
 const filterByRating = (books: Book[]): Book[] => {
-  const filteredBooks = books.filter((book) => book.rating >= 4);
+  const BooksOverRating4 = books.filter((book) => book.rating >= 4);
 
-  return filteredBooks;
+  return BooksOverRating4;
 };
 
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+const filterActiveUsers = (users: User[]): User[] => {
+  const activeUser = users.filter((user) => user.isActive === true);
+
+  return activeUser;
+};
