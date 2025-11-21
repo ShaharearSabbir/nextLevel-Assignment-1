@@ -111,5 +111,3 @@ const calculateTotalPrice = (products: Product[]): number => {
 
   return payable;
 };
-
-
